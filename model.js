@@ -10,6 +10,14 @@ var role = Schema({
     allowed: {type: Object, default: {}}
 });
 
+role.set('toJSON', {
+    getters: true,
+    //virtuals: false,
+    transform: function (doc, ret, options) {
+        delete ret._id;
+    }
+});
+
 role.methods.can = function (perm, action) {
     return permission.has(this.has, perm.split(':'), action);
 };
