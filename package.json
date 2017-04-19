@@ -1,6 +1,6 @@
 {
-    "name": "role",
-    "description": "role",
+    "name": "model-roles",
+    "description": "model-roles",
     "version": "0.0.0",
     "author": {
         "name": "serandives",
@@ -12,6 +12,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/serandules/role.git"
+        "url": "git://github.com/serandules/model-roles.git"
     }
 }
