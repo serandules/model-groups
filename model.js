@@ -1,14 +1,26 @@
 var mongoose = require('mongoose');
-var permission = require('permission');
-
 var Schema = mongoose.Schema;
 
+var permission = require('permission');
+var types = require('validators').types;
+
 var role = Schema({
-    name: String,
-    description: String,
     has: {type: Object, default: {}},
-    allowed: {type: Object, default: {}}
-});
+    allowed: {type: Object, default: {}},
+    name: {
+        type: String,
+        required: true,
+        validator: types.string({
+            length: 20
+        })
+    },
+    description: {
+        type: String,
+        validator: types.string({
+            length: 1000
+        })
+    }
+}, {collection: 'roles'});
 
 role.set('toJSON', {
     getters: true,
@@ -32,4 +44,4 @@ role.virtual('id').get(function () {
     return this._id;
 });
 
-module.exports = mongoose.model('Role', role);
+module.exports = mongoose.model('roles', role);
