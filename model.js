@@ -1,12 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var mongins = require('mongins');
 var permission = require('permission');
 var types = require('validators').types;
 
 var role = Schema({
-    has: {type: Object, default: {}},
-    allowed: {type: Object, default: {}},
     name: {
         type: String,
         required: true,
@@ -21,6 +20,10 @@ var role = Schema({
         })
     }
 }, {collection: 'roles'});
+
+role.plugin(mongins);
+role.plugin(mongins.createdAt);
+role.plugin(mongins.updatedAt);
 
 role.set('toJSON', {
     getters: true,
