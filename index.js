@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var model;
 
 try {
-    model = mongoose.model('roles') || require('./model');
+    model = mongoose.model('groups') || require('./model');
 } catch (e) {
     model = require('./model');
 }

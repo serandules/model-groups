@@ -1,6 +1,6 @@
 {
-    "name": "model-roles",
-    "description": "model-roles",
+    "name": "model-groups",
+    "description": "model-groups",
     "version": "0.0.0",
     "author": {
         "name": "serandives",
@@ -13,6 +13,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/serandules/model-roles.git"
+        "url": "git://github.com/serandules/model-groups.git"
     }
 }
