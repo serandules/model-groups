@@ -11,6 +11,7 @@
     "logger": "serandules/logger#master",
     "validators": "serandules/validators#master",
     "mongins": "serandules/mongins#master"
+    "permission": "serandules/permission#master"
   },
   "repository": {
     "type": "git",
