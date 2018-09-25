@@ -23,8 +23,8 @@ var group = Schema({
 
 group.plugin(mongins);
 group.plugin(mongins.user);
-group.plugin(mongins.createdAt);
-group.plugin(mongins.updatedAt);
+group.plugin(mongins.createdAt());
+group.plugin(mongins.updatedAt());
 
 /*
 group.methods.can = function (perm, action) {
