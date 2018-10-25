@@ -21,7 +21,7 @@ var group = Schema({
     }
 }, {collection: 'groups'});
 
-group.plugin(mongins);
+group.plugin(mongins());
 group.plugin(mongins.user);
 group.plugin(mongins.createdAt());
 group.plugin(mongins.updatedAt());
