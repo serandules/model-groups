@@ -2,8 +2,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var mongins = require('mongins');
-var permission = require('permission');
-var types = require('validators').types;
+var validators = require('validators');
+
+var types = validators.types;
 
 var group = Schema({
     name: {
