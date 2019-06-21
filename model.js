@@ -6,7 +6,7 @@ var validators = require('validators');
 
 var types = validators.types;
 
-var group = Schema({
+var schema = Schema({
     name: {
         type: String,
         required: true,
@@ -22,10 +22,19 @@ var group = Schema({
     }
 }, {collection: 'groups'});
 
-group.plugin(mongins());
-group.plugin(mongins.user);
-group.plugin(mongins.createdAt());
-group.plugin(mongins.updatedAt());
+schema.plugin(mongins());
+schema.plugin(mongins.user);
+schema.plugin(mongins.permissions({
+    workflow: 'model'
+}));
+schema.plugin(mongins.status({
+    workflow: 'model'
+}));
+schema.plugin(mongins.visibility({
+    workflow: 'model'
+}));
+schema.plugin(mongins.createdAt());
+schema.plugin(mongins.updatedAt());
 
 /*
 group.methods.can = function (perm, action) {
@@ -38,4 +47,4 @@ group.methods.permit = function (perm, actions, done) {
     this.save(done);
 };*/
 
-module.exports = mongoose.model('groups', group);
+module.exports = mongoose.model('groups', schema);
