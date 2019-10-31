@@ -35,6 +35,7 @@ schema.plugin(mongins.visibility({
 }));
 schema.plugin(mongins.createdAt());
 schema.plugin(mongins.updatedAt());
+schema.plugin(mongins.modifiedAt());
 
 /*
 group.methods.can = function (perm, action) {
